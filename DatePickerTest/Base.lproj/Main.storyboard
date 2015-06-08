@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="None selected yet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsK-FD-s2R">
+                                <rect key="frame" x="77" y="80" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Jyj-hT-3ZP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Jyj-hT-3ZP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Jyj-hT-3ZP"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBY-HR-Loh">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="a40-TO-Lht"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="455440841.156555">
+                                    <!--2015-06-08 07:20:41 +0000-->
+                                </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="a40-TO-Lht"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="a40-TO-Lht"/>
+                                    </mask>
+                                </variation>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAJ-1D-JKl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="y1q-Y9-DLP"/>
+                                    <constraint firstAttribute="height" constant="30" id="y97-LK-977"/>
+                                </constraints>
+                                <state key="normal" title="Select">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="y1q-Y9-DLP"/>
+                                        <exclude reference="y97-LK-977"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="y1q-Y9-DLP"/>
+                                        <include reference="y97-LK-977"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="didTapSelectForTopPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peZ-aI-5L8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3K-Bz-lPZ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <mutableString key="text">The top date picker has minute interval set to 5. If I tap select to choose the datepicker.date without having scrolled the datePicker at all, it takes the current time, instead of the currently selected time in the datePicker. However, if I scroll the datePicker and select a different date, datePicker.date will be correct.  To see the problem, you have to try this when the current time is not a multiple of 5 (for example, 09:37, not 09:35). </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently selected date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O4-u8-qIK">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eAJ-1D-JKl" firstAttribute="leading" secondItem="fsK-FD-s2R" secondAttribute="trailing" constant="8" id="3l2-EA-wN5"/>
+                            <constraint firstItem="6O4-u8-qIK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="8HS-jN-EAt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z3K-Bz-lPZ" secondAttribute="bottom" id="8bw-Mt-rh2"/>
+                            <constraint firstItem="6O4-u8-qIK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="DQ3-UR-H5G"/>
+                            <constraint firstItem="fsK-FD-s2R" firstAttribute="top" secondItem="6O4-u8-qIK" secondAttribute="bottom" constant="1" id="LdI-CR-7dM"/>
+                            <constraint firstAttribute="trailing" secondItem="6O4-u8-qIK" secondAttribute="trailing" constant="16" id="Rw1-zD-ZaM"/>
+                            <constraint firstItem="pBY-HR-Loh" firstAttribute="top" secondItem="eAJ-1D-JKl" secondAttribute="bottom" constant="3" id="YCA-ST-CZF"/>
+                            <constraint firstAttribute="trailing" secondItem="eAJ-1D-JKl" secondAttribute="trailing" constant="5" id="a3Y-Nj-ZkU"/>
+                            <constraint firstAttribute="trailing" secondItem="pBY-HR-Loh" secondAttribute="trailing" id="baN-st-D0a"/>
+                            <constraint firstItem="eAJ-1D-JKl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="flV-rg-eJG">
+                                <variation key="widthClass=compact" constant="26"/>
+                            </constraint>
+                            <constraint firstItem="fsK-FD-s2R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="jek-LW-Sy6"/>
+                            <constraint firstAttribute="trailing" secondItem="Z3K-Bz-lPZ" secondAttribute="trailing" constant="342" id="p6W-wS-wQP">
+                                <variation key="widthClass=compact" constant="16"/>
+                            </constraint>
+                            <constraint firstItem="Z3K-Bz-lPZ" firstAttribute="top" secondItem="pBY-HR-Loh" secondAttribute="bottom" constant="8" id="uEg-P8-SKP"/>
+                            <constraint firstItem="Z3K-Bz-lPZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="vbU-hE-8VZ"/>
+                            <constraint firstItem="fsK-FD-s2R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="w4q-vq-aAK">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="pBY-HR-Loh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w5f-y6-p3u"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pBY-HR-Loh"/>
+                                <exclude reference="eAJ-1D-JKl"/>
+                                <exclude reference="Z3K-Bz-lPZ"/>
+                                <exclude reference="6O4-u8-qIK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8HS-jN-EAt"/>
+                                <exclude reference="DQ3-UR-H5G"/>
+                                <exclude reference="Rw1-zD-ZaM"/>
+                                <exclude reference="LdI-CR-7dM"/>
+                                <exclude reference="jek-LW-Sy6"/>
+                                <exclude reference="w4q-vq-aAK"/>
+                                <exclude reference="YCA-ST-CZF"/>
+                                <exclude reference="baN-st-D0a"/>
+                                <exclude reference="w5f-y6-p3u"/>
+                                <exclude reference="p6W-wS-wQP"/>
+                                <exclude reference="uEg-P8-SKP"/>
+                                <exclude reference="vbU-hE-8VZ"/>
+                                <exclude reference="3l2-EA-wN5"/>
+                                <exclude reference="a3Y-Nj-ZkU"/>
+                                <exclude reference="flV-rg-eJG"/>
+                                <exclude reference="8bw-Mt-rh2"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pBY-HR-Loh"/>
+                                <include reference="eAJ-1D-JKl"/>
+                                <include reference="Z3K-Bz-lPZ"/>
+                                <include reference="6O4-u8-qIK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8HS-jN-EAt"/>
+                                <include reference="DQ3-UR-H5G"/>
+                                <include reference="Rw1-zD-ZaM"/>
+                                <include reference="LdI-CR-7dM"/>
+                                <include reference="jek-LW-Sy6"/>
+                                <include reference="w4q-vq-aAK"/>
+                                <include reference="YCA-ST-CZF"/>
+                                <include reference="baN-st-D0a"/>
+                                <include reference="w5f-y6-p3u"/>
+                                <include reference="p6W-wS-wQP"/>
+                                <include reference="uEg-P8-SKP"/>
+                                <include reference="vbU-hE-8VZ"/>
+                                <include reference="3l2-EA-wN5"/>
+                                <include reference="a3Y-Nj-ZkU"/>
+                                <include reference="flV-rg-eJG"/>
+                                <include reference="8bw-Mt-rh2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="topDatePicker" destination="pBY-HR-Loh" id="AFM-me-IHB"/>
+                        <outlet property="topLabel" destination="fsK-FD-s2R" id="9GN-tp-8e8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="429"/>
+        </scene>
+    </scenes>
+</document>
